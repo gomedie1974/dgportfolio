@@ -56,6 +56,8 @@ body {
 .nav {
   display: flex;
   gap: 2rem;
+  justify-content: flex-end;
+  width: 100%;             
 }
 .nav a {
   color: #fff;
@@ -316,101 +318,81 @@ body {
   25%, 75% { opacity: 0; transform: translateY(-3px); }
 }
 
-/* Estilos para la sección de habilidades */
-.habilidades {
-  padding: 50px 20px;
+/* Tecnologias */
+.tecnologias {
+  padding: 60px 20px;
   text-align: center;
 }
 
-.habilidades h2 {
+.tecnologias h2 {
   font-size: 2.5rem;
-  margin-bottom: 30px;
+  color: #61dafb;
+  margin-bottom: 20px;
 }
 
-.habilidades-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajustamos el tamaño de las tarjetas */
-  gap: 20px;
-  justify-items: center;
-  max-width: 1200px;
+.tecnologias p {
+  max-width: 800px;
   margin: 0 auto 40px auto;
-}
-
-.habilidad-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.habilidad-card:hover {
-  transform: translateY(-15px);
-  background-color: #61dafb; /* Fondo al hacer hover */
-}
-
-.habilidad-card i {
-  font-size: 50px;
-  color: #333;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-}
-
-.habilidad-card:hover i {
-  color: #fff; /* Cambiar color del icono */
-}
-
-.habilidad-card p {
   font-size: 1rem;
-  color: #333;
-  margin-top: 10px;
-  font-weight: bold;
+  color: #fff;
 }
 
-.habilidad-card:hover p {
-  color: #fff; /* Cambiar color del texto */
+.tecnologias-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
 }
-/* --- RESPONSIVE --- */
+
+.tecnologia-card {
+  background-color: #182a63;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tecnologia-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.tecnologia-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.tecnologia-card h3 {
+  color: #61dafb;
+  margin-bottom: 10px;
+}
+
+.tecnologia-card p {
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .habilidades h2 {
+  .tecnologias h2 {
     font-size: 2rem;
   }
-
-  .habilidad-card {
-    max-width: 140px;
-    padding: 15px;
+  .tecnologias-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
-
-  .habilidad-card i {
-    font-size: 40px;
-  }
-
 }
 
 @media (max-width: 480px) {
-  .habilidades-container {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-
-  .habilidad-card {
-    max-width: 120px;
-    padding: 10px;
-  }
-
-  .habilidad-card p {
-    font-size: 0.9rem;
+  .tecnologias-container {
+    grid-template-columns: 1fr;
   }
 }
-  
-  .tech-icon {
-    width: 40px; /* Ajusta el tamaño */
+.tech-icon {
+    width: 40px;
     height: 40px;
     filter: invert(100%) grayscale(100%) contrast(100%);
-  }
+}
