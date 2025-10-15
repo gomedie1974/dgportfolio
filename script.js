@@ -1,5 +1,5 @@
 // Efecto typing para el hero + fade-in del subtítulo
-const text = "Diego Gomez.";
+const text = "Diego Alejandro Gomez.";
 const typingSpeed = 150;
 const nameSpan = document.querySelector(".hero-content .name");
 const subtitle = document.querySelector(".hero-subtitle");
