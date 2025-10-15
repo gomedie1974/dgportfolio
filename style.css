@@ -526,3 +526,46 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
 }
+
+/* iconos */
+.contact-icons {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.contact-icons li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Colores de fondo por defecto */
+.contact-icons li a.email { background-color: #182A63; }       /* rojo Gmail */
+.contact-icons li a.linkedin { background-color: #0077B5; }    /* azul LinkedIn */
+.contact-icons li a.github { background-color: #182A63; }      /* azul oscuro o fondo de tu sitio */
+.contact-icons li a.whatsapp { background-color: #25D366; }    /* verde WhatsApp */
+
+/* Hover: aumento de tamaño y efecto sutil */
+.contact-icons li a:hover {
+  transform: scale(1.2);
+  filter: brightness(1.1);
+}
+
+/* Íconos dentro del círculo */
+.contact-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Opcional: invertir GitHub si quieres sobre fondo oscuro */
+.contact-icons li a.github .contact-icon {
+  filter: invert(100%);
+}
