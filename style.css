@@ -318,39 +318,60 @@ body {
   25%, 75% { opacity: 0; transform: translateY(-3px); }
 }
 
+
 /* Tecnologias */
-.tecnologias {
-  padding: 60px 20px;
+.tecnologias h2{
   text-align: center;
 }
-
-.tecnologias h2 {
-  font-size: 2.5rem;
-  color: #61dafb;
-  margin-bottom: 20px;
-}
-
-.tecnologias p {
+.section p{
   max-width: 800px;
   margin: 0 auto 40px auto;
   font-size: 1rem;
   color: #fff;
+  
 }
-
-.tecnologias-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
 .tecnologia-card {
+  position: relative;
   background-color: #182a63;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  width: 230px;   /* Tamaño uniforme para todas */
+  height: 280px;  /* Alto suficiente para la imagen y texto */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tecnologia-card img {
+  width: 100px;   /* Imagen más grande */
+  height: 100px;  /* Imagen más grande */
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tecnologia-card:hover .card-overlay {
+  opacity: 1;
 }
 
 .tecnologia-card:hover {
@@ -358,31 +379,48 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-.tecnologia-card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
-  object-fit: contain;
-}
-
+/* Texto y títulos */
 .tecnologia-card h3 {
   color: #61dafb;
   margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 .tecnologia-card p {
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.4;
+}
+
+/* WordPress mantiene colores */
+.wordpress-logo {
+  filter: none;
+}
+.tecnologia-card img.wordpress-logo {
+  padding: 10px;          /* espacio alrededor del logo */
+  border-radius: 8px;     /* opcional, esquinas redondeadas */
+  object-fit: contain;
+  filter: invert(100%) grayscale(100%) contrast(100%);
+}
+
+
+/* Contenedor */
+.tecnologias-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  justify-items: center;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .tecnologias h2 {
-    font-size: 2rem;
+  .tecnologia-card {
+    width: 200px;
+    height: 260px;
   }
-  .tecnologias-container {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  .tecnologia-card img {
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -390,9 +428,101 @@ body {
   .tecnologias-container {
     grid-template-columns: 1fr;
   }
+  .tecnologia-card {
+    width: 80%;
+    height: auto;
+    padding: 15px;
+  }
+  .tecnologia-card img {
+    width: 80px;
+    height: 80px;
+  }
 }
-.tech-icon {
-    width: 40px;
-    height: 40px;
-    filter: invert(100%) grayscale(100%) contrast(100%);
+
+/* SOBRE MÍ y CONTACTO alineados a la izquierda */
+.about, .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: flex-start; /* alineado a la izquierda */
+  min-height: 70vh;        /* altura mínima para que queden equilibradas */
+  padding: 4rem 2rem;
+  text-align: left;        /* texto alineado a la izquierda */
+}
+
+/* Títulos */
+.about h2, .contact h2 {
+  font-size: 2rem;
+  color: #61dafb;
+  margin-bottom: 1.5rem;
+}
+
+/* Ajuste para párrafos de SOBRE MÍ y CONTACTO */
+.about p, .contact p {
+  max-width: 800px; /* mantiene un ancho cómodo */
+  margin: 0 0 1rem 0; /* quita el auto centering */
+  text-align: left;  /* asegura alineación izquierda */
+}
+
+/* Contacto */
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.contact li {
+  margin-bottom: 0.8rem;
+}
+
+.contact a {
+  color: #61dafb;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact a:hover {
+  color: #8be9fd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about, .contact {
+    min-height: auto;
+    padding: 3rem 1.5rem;
+    align-items: flex-start; /* mantiene alineación en móvil */
+  }
+}
+
+/* boton arriba */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background-color: #61dafb;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: none;           /* oculto al inicio */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover */
+#scrollTopBtn:hover {
+  background-color: #8be9fd;
+  transform: translateY(-3px);
+}
+
+/* Animación de “bailar” sutil */
+#scrollTopBtn svg {
+  animation: float 1.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
