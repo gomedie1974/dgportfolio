@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./style.css" />
   <!-- Incluir Bootstrap Icons desde CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preload" as="video" href="./images/6015581_Keyboard_Laptop_3840x2160.mp4" type="video/mp4">
 
 </head>
 
@@ -25,7 +26,7 @@
     </nav>
     
  
-    <!-- Botón hamburguesa -->
+    <!-- Botón hamburguesa -->  
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
@@ -41,9 +42,22 @@
 <section class="hero">
    
   <!-- Video de fondo -->
-    <video autoplay muted loop playsinline>
+    <!-- <video autoplay muted loop playsinline>
       <source src="./images/6015581_Keyboard_Laptop_3840x2160.mp4" type="video/mp4">      
     </video>
+  -->
+
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    preload="auto" 
+    id="bgVideo">
+    <source src="./images/6015581_Keyboard_Laptop_3840x2160.mp4" type="video/mp4">
+  </video>
+    <div class="overlay"></div>
+
 
   <div class="hero-content">
     <div class="logo">
