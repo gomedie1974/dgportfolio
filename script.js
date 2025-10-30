@@ -77,3 +77,10 @@ hamburger.addEventListener('click', () => {
   scrollTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+
+ /* interruptor */ 
+ const toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('change', () => {
+  document.body.classList.toggle('light-theme');
+});

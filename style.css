@@ -189,6 +189,9 @@ body {
 .project-info {
   padding: 1.5rem;
 }
+.project-info p {
+  text-align: justify;
+}
 .project-info a {
   color: #61dafb;
   font-weight: bold;
@@ -279,17 +282,57 @@ body {
 }
 
 /* Subtítulo oculto y animación fade-in */
-.hero {
+/* .hero {
   background-image: url('./images/blog1.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-}
+} */
+
+ .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Video de fondo */
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* lo manda detrás del texto */
+    }
+
+    /* Capa semitransparente para mejorar contraste */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    /* Contenido encima del video */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
 
 .hero-subtitle {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  font-size: larger;
 }
 
 .hero-subtitle.show {
@@ -303,7 +346,6 @@ body {
   transform: translateY(20px);
   transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
-
 .hero-btn.show {
   opacity: 1;
   transform: translateY(0);
@@ -461,7 +503,7 @@ body {
 .about p, .contact p {
   max-width: 800px; /* mantiene un ancho cómodo */
   margin: 0 0 1rem 0; /* quita el auto centering */
-  text-align: left;  /* asegura alineación izquierda */
+  text-align: justify;  /* asegura alineación izquierda */
 }
 
 /* Contacto */
@@ -569,3 +611,25 @@ body {
 .contact-icons li a.github .contact-icon {
   filter: invert(100%);
 }
+
+
+  /* CONTACTO EN DOS COLUMNAS */
+.contact-content {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-map {
+  flex: 1;
+  min-width: 400px;
+  height: 300px; /* ajusta altura del mapa */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
