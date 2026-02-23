@@ -133,7 +133,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
-
+ 
+.project-info p {
+  text-align: justify;  /* Mantener el texto justificado */
+  line-height: 1.6;  /* Espacio entre líneas */
+  letter-spacing: 0.5px;  /* Espacio entre letras */
+  hyphens: auto;  /* Permitirá dividir palabras de forma más natural */
+}
 .project-image {
   position: relative;
   width: 100%;
